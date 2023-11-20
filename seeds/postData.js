@@ -1,5 +1,6 @@
 const { Post } = require('../models');
 
+// The data populated corresponds to the fields defined in the Post model.
 const postData = [
     {
         title: 'My First Post',

@@ -1,5 +1,6 @@
 const { User } = require('../models');
 
+// The data populated corresponds to the fields defined in the User model.
 const userData = [
     {
         user_name: 'test_user',
