@@ -1,3 +1,4 @@
+// The Sequelize class is required from the sequelize package.  A new instance is created in the connection environment defined below.
 const Sequelize = require('sequelize');
 
 // The dotenv package is required to obfuscate connection information for the database.
