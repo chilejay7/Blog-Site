@@ -12,17 +12,17 @@ Post.init(
             autoIncrement: true,
         },
         title: {
-            type: DataTypes.STRING(100),
+            type: DataTypes.STRING(200),
             allowNull: false,
         },
-        date_created: {
+        post_date: {
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW,
         },
         // The data type of TEXT allows for storage of longer text data than the STRING data type.  It's a better choice than string for
         // the actual content of a blog post.
-        content: {
+        post_content: {
             type: DataTypes.TEXT,
             allowNull: false,
         }

@@ -5,4 +5,8 @@ Post.hasMany(Comment, {
     foreignKey: 'post_id',
 });
 
-Comment.hasOne(Post)
+Comment.belongsTo(Post, {
+    foreignKey: 'post_id',
+});
+
+module.exports = { Post, Comment };
