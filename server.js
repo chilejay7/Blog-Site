@@ -16,9 +16,12 @@ const PORT = process.env.PORT || 7075;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// app.engine('handlebars', hbs.engine);
-// app.set('view engine', 'handlebars');
+// The handlebars templating engine is initiated and directs Express to use Handlebars to render views with the handlebars file extension.
+// app.set set the default view engine to handlebars.  This makes the res.render() function available in the application.
+app.engine('handlebars', exphbs.engine);
+app.set('view engine', 'handlebars');
 
+// Directs Express to use the routes defined in the controllers directory.  The main index.js file in root of the directory exports all routes needed for the application.
 app.use(routes);
 
 // Syncs the Sequelize models with the database.  The false option does not drop tables if they exist.
