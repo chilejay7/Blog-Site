@@ -1,7 +1,7 @@
 const  { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// A new instance is created that extends the included Model class from sequelize.
+// A new class is created that extends the included Model class from sequelize to create the post table.
 class Post extends Model {};
 
 Post.init(
