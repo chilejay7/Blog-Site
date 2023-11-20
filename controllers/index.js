@@ -3,5 +3,5 @@ const apiRoutes = require('./api');
 
 router.use('/api', apiRoutes);
 
-exports.router = router;
+module.exports = router;
 
