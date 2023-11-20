@@ -21,4 +21,4 @@ process.env.JAWSDB_URL ? sequelize = new Sequelize(process.env.JAWSDB_URL)
         }
     );
 
-exports.sequelize = sequelize;
+module.exports = sequelize;
