@@ -1,4 +1,4 @@
-const { module, DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // A new instance is created that extends the included Model class from sequelize.
@@ -17,13 +17,16 @@ Comment.init(
             allowNull: false,
             defaultValue: DataTypes.NOW,
         },
-        user_name: {
-            type: DataTypes.STRING(75),
-            allowNull: false,
-        },
         comment_content: {
             type: DataTypes.TEXT,
             allowNull: false,
+        },
+        user_name: {
+            type: DataTypes.STRING,
+            references: {
+                model: 'user',
+                key: 'user_name',
+            }
         },
         post_id: {
             type: DataTypes.INTEGER,

@@ -2,6 +2,23 @@
 // between the tables.
 const Post = require('./Post');
 const Comment = require('./Comment');
+const User = require('./User');
+
+User.hasMany(Post, {
+    foreignKey: 'user_name',    
+});
+
+Post.belongsTo(User, {
+    foreignKey: user_id,
+});
+
+User.hasMany(Comment, {
+    foreignKey: 'user_name',
+});
+
+Comment.belongsTo(User, {
+    foreignKey: 'user_name',
+});
 
 // A post can potentially have many comments.  All comments will reference the post they
 // are associated with through the primary key of the post's id.
@@ -16,4 +33,4 @@ Comment.belongsTo(Post, {
 });
 
 // These models will be imported in the route files that will interact with the database.
-module.exports = { Post, Comment };
+module.exports = { Post, Comment, User };
