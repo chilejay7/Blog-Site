@@ -1,5 +1,6 @@
 const { Comment } = require('../models');
 
+// The data populated corresponds to the fields defined in the Comment model.
 const commentData = [
     {
         comment_date: 'November 20, 2023 17:30:00',

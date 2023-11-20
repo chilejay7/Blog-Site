@@ -1,6 +1,7 @@
 const sequelize = require('../config/connection');
 const { Model, DataTypes } = require('sequelize');
 
+// A new class is created that extends the included Model class from sequelize to create the user table.
 class User extends Model {};
 
 User.init(
