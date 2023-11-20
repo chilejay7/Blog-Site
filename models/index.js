@@ -33,4 +33,4 @@ Comment.belongsTo(Post, {
 });
 
 // These models will be imported in the route files that will interact with the database.
-module.exports = { Post, Comment, User };
+module.exports = { User, Post, Comment };
