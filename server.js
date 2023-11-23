@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // This defines middleware using the morgan logging module.
-app.use(morgan('tiny'));
+app.use(morgan('dev'));
 
 // The handlebars templating engine is initiated and directs Express to use Handlebars to render views with the handlebars file extension.
 // app.set set the default view engine to handlebars.  This makes the res.render() function available in the application.
