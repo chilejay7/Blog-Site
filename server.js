@@ -24,6 +24,7 @@ const PORT = process.env.PORT || 7075;
 // This allows Express to use middleware to parse incoming requests using json and url encoded data.
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // This defines middleware using the morgan logging module.
 app.use(morgan('dev'));
