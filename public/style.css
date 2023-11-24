@@ -1,3 +1,17 @@
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: yellow;
+    color: black;
+    border-radius: .1em;
+};
+
+nav {
+    margin-right: 2%;
+}
+
 body {
     background-image: url('./assets/background2.jpg');
     color: white;
