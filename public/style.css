@@ -6,10 +6,30 @@ header {
     background-color: yellow;
     color: black;
     border-radius: .1em;
-};
+}
+
+h1 {
+    text-align: center;
+    margin-left: 2%;
+    flex-basis: 75%;
+}
 
 nav {
+    flex-basis: 25%;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
     margin-right: 2%;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 body {
