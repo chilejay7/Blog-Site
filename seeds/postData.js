@@ -17,7 +17,7 @@ const postData = [
     {
         title: `Test User 2's post`,
         post_date: 'November 19, 2023 20:00',
-        post_content: `Our second test user decied to create a post.  This is is his first attempt at creating a post`,
+        post_content: `Our second test user decied to create a post.  This is his first attempt at creating a post`,
         user_id: 2,
     },
 

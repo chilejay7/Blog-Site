@@ -24,9 +24,10 @@ const PORT = process.env.PORT || 7075;
 // This allows Express to use middleware to parse incoming requests using json and url encoded data.
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // This defines middleware using the morgan logging module.
-app.use(morgan('tiny'));
+app.use(morgan('dev'));
 
 // The handlebars templating engine is initiated and directs Express to use Handlebars to render views with the handlebars file extension.
 // app.set set the default view engine to handlebars.  This makes the res.render() function available in the application.
