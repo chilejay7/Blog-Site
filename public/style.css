@@ -11,7 +11,7 @@ header {
 h1 {
     text-align: center;
     margin-left: 2%;
-    flex-basis: 75%;
+    flex-basis: 85%;
 }
 
 nav {
@@ -30,6 +30,24 @@ ul {
 a {
     text-decoration: none;
     color: black;
+    transition: .3s;
+}
+
+
+li {
+    transition: 0.3s;
+}
+
+li:hover {
+    transform: translate(0, -2px);
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
 }
 
 body {
