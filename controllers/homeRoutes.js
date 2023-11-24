@@ -1,8 +1,7 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Post } = require('../models');
 
 router.get('/', async (req, res) => {
-    // console.log(req);
     const postData = await Post.findAll();
     console.log(postData);
     const posts = postData.map(post => post.get({ plain: true }));
