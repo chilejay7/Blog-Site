@@ -49,7 +49,9 @@ router.post('/create', async (req, res) => {
         user_name: req.body.user_name,
         email: req.body.email,
         password: req.body.password,
-    })
+    });
+    
+    res.redirect('/');
 })
 
 module.exports = router;
