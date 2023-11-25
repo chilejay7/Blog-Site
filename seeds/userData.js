@@ -5,12 +5,12 @@ const userData = [
     {
         user_name: 'test_user',
         email: 'test@email.com',
-        password: 12345678,
+        password: 123,
     },
     {
         user_name: 'testy_2',
         email: 'test_user2@email.com',
-        password: 123456789,
+        password: 1234,
     },
 ];
 
