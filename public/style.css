@@ -10,6 +10,7 @@ header {
 
 h1 {
     text-align: center;
+    font-size: 3rem;
     margin-left: 2%;
     flex-basis: 85%;
 }
@@ -54,4 +55,33 @@ body {
     background-image: url('./assets/background2.jpg');
     color: white;
 }
+
+div {
+    margin: 10px 0px;
+}
+
+#accountForms {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+
+.form,
+.post {
+    background-color: grey;
+    font-size: 1.25rem;
+    padding: 15px;
+    border-radius: .5em;
+    width: 25%;
+    opacity: .85;
+}
+
+/* .post {
+    background-color: grey;
+    border-radius: .5em;
+    padding: 15px;
+    opacity: .85;
+} */
+
+
 
