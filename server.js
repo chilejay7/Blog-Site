@@ -8,6 +8,8 @@ const morgan = require('morgan');
 // Imports the connection configuration for the database from the file specified.
 const sequelize = require('./config/connection');
 
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 // The routes exported from the controllers directory's main index.js file are imported.
 const routes = require('./controllers');
 
@@ -24,10 +26,27 @@ const PORT = process.env.PORT || 7075;
 // This allows Express to use middleware to parse incoming requests using json and url encoded data.
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// This is used to serve css stylesheets and assets to the application.
 app.use(express.static(path.join(__dirname, 'public')));
 
 // This defines middleware using the morgan logging module.
 app.use(morgan('dev'));
+
+const userSessions = {
+    secret: process.env.SECRET,
+    cookie: {
+        maxAge: 24 * 60 * 60 * 1000,
+    },
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+        db: sequelize
+    })
+};
+
+// Middleware using the session needs to be run on every incoming request.
+app.use(session(userSessions));
 
 // The handlebars templating engine is initiated and directs Express to use Handlebars to render views with the handlebars file extension.
 // app.set set the default view engine to handlebars.  This makes the res.render() function available in the application.
