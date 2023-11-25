@@ -33,15 +33,14 @@ router.post('/', async (req, res) => {
       }
 
     // This creates a session variable to show that the user is logged in.  The user_id is used as the identifier with a boolean.
-    req.session.save(() => {
-        // req.session.user_id = userData.id;
+    req.session.save(async () => {
+        req.session.user_id = userData.id;
         req.session.loggedIn = true;
-        res.status(200)
+
+        res.status(200).redirect('/');
     });
 
     console.dir(`Session data for debugging: ${req.session}`);
-
-    res.redirect('/');
 });
 
 // Create new user route
