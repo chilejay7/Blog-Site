@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { User } = require('../models');
-const bcrypt = require('bcrypt');
 
 router.get('/', (req, res) => {
     // console.log(req.headers);
@@ -18,16 +17,19 @@ router.post('/', async (req, res) => {
     });
 
     // !userData ? res.status(400).json({message: 'User not found.  Please re-enter your credentials.'})
-    console.log(userData);
+    // console.log(userData);
 
-    //  const validPassword = await userData.checkPassword(req.body.password);
+     const validPassword = await userData.checkPassword(req.body.password);
 
+    // This creates a session variable to show that the user is logged in.  The user_id is used as the identifier with a boolean.
     req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.logged_in = true;
 
         res.status(200);
     });
+
+    console.log(req.session.user_id);
 
     res.redirect('/');
 });

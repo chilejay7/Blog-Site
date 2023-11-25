@@ -3,9 +3,9 @@ const { Post } = require('../models');
 
 router.get('/', async (req, res) => {
     const postData = await Post.findAll();
-    console.log(postData);
+    // console.log(postData);
     const posts = postData.map(post => post.get({ plain: true }));
-    console.log(posts);
+    // console.log(posts);
     res.render('homepage', { posts });
 });
 

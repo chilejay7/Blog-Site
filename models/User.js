@@ -1,8 +1,13 @@
 const sequelize = require('../config/connection');
 const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
 
 // A new class is created that extends the included Model class from sequelize to create the user table.
-class User extends Model {};
+class User extends Model {
+    checkPassword(userPassword) {
+        return bcrypt.compareSync(userPassword, this.password);
+    }
+};
 
 User.init(
     {
@@ -27,7 +32,7 @@ User.init(
         password: {
             type: DataTypes.STRING,
             validate: {
-                len: [8],
+                len: [3],
             },
         },
     },
