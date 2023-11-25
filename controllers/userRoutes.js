@@ -17,28 +17,29 @@ router.post('/', async (req, res) => {
         }
     });
 
-    // !userData ? res.status(400).json({message: 'User not found.  Please re-enter your credentials.'})
-    console.log(userData);
+    if (!userData) {
+        res.status(400).json({ message: 'Incorrect username or password. Please try again!' });
+    }
+    // console.log(userData);
 
      const validPassword = await userData.checkPassword(req.body.password);
-     console.log(validPassword);
+     console.log(`ValidPassword Data follows: ${validPassword}`);
 
      if (!validPassword) {
         res
           .status(400)
-          .json({ message: 'Incorrect email or password. Please try again!' });
+          .json({ message: 'Incorrect username or password. Please try again!' });
         return;
       }
 
     // This creates a session variable to show that the user is logged in.  The user_id is used as the identifier with a boolean.
     req.session.save(() => {
-        req.session.user_id = userData.id;
-        req.session.logged_in = true;
-
-        res.status(200);
+        // req.session.user_id = userData.id;
+        req.session.loggedIn = true;
+        res.status(200)
     });
 
-    console.log(req.session.user_id);
+    console.dir(`Session data for debugging: ${req.session}`);
 
     res.redirect('/');
 });
@@ -50,7 +51,12 @@ router.post('/create', async (req, res) => {
         email: req.body.email,
         password: req.body.password,
     });
-    
+
+    req.session.save(() => {
+        req.session.loggedIn = true;
+        res.status(200);
+    })
+    console.log(`Session data for debugging: ${req.session}`);
     res.redirect('/');
 })
 
