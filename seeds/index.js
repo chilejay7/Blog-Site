@@ -9,7 +9,7 @@ const seedAll = async () => {
 
     // Users should not be seeded prior to creating accounts through the application.
     // The passwords need to be hashed in order to allow verification on login.
-    // await seedUsers();
+    await seedUsers();
 
     await seedPosts();
 
