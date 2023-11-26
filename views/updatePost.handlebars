@@ -5,8 +5,14 @@
 <section>
     <div class="post">
         <p>{{postEdit.post_content}}</p>
-        <p>Created by {{postEdit.user_name}} on {{postEdit.post_date}}</p>
+        <p>Created by {{postEdit.user.user_name}} on {{postEdit.post_date}}</p>
         <div>
+            <h3>Comments:</h3>
+            {{#each comments as |comment|}}
+
+            <p>{{comment.comment_content}}</p>
+
+            {{/each}}
             <button>Add Comment</button>
         </div>
     </div>

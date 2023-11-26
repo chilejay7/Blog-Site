@@ -28,25 +28,26 @@ router.get('/:id', async (req, res) => {
                 'user_name',
             ],
         },
-        {
-            model: Comment,
-            attributes: [
-                'id',
-                'comment_date',
-                'comment_content',
-                'user_id',
-                'post_id',
-            ],
-        },
        ],
     });
 
+    const commentsOnPost = await Comment.findAll({
+        where: {
+            post_id: req.params.id,
+        }
+    })
+
+    // console.log(postId);
+
     // const postEdit = postId.map(post => post.get({ plain: true }));
     const postEdit = postId.get({ plain: true });
-    console.log(`The post retrieved from the database query is: ${postEdit.post_content}`);
+    const comments = commentsOnPost.map(c => c.get({ plain: true }));
+    console.log(comments);
+    console.log(`The post retrieved from the database query is: ${postEdit}`);
 
     res.render('updatePost', {
         postEdit,
+        comments,
         loggedIn: req.session.loggedIn,
     })
 })
