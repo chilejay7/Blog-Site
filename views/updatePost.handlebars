@@ -1,0 +1,19 @@
+{{#if loggedIn}}
+
+<h2>Viewing Post: {{postEdit.title}}</h2>
+
+<section>
+    <div class="post">
+        <p>{{postEdit.post_content}}</p>
+        <p>Created by {{postEdit.user_name}} on {{postEdit.post_date}}</p>
+        <div>
+            <button>Add Comment</button>
+        </div>
+    </div>
+</section>
+
+{{else}}
+
+<h3 id="loginHeader"><a href="/login">Please login to view and interact with other user's posts and comments</a></h3>
+
+{{/if}}
