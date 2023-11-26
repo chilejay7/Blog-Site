@@ -15,8 +15,17 @@
             <ul>
                 <li><a href="/" title="Return to the homepage">Home</a></li>
                 <li><a href="/api/posts" title="Dashboard">Dashboard</a></li>
-                <li><a href="/login" title="Member login">Login</a></li>
-                <li><a href="/login" title="Sign-up to become a member of the site">Sign-Up</a></li>
+               
+                {{#if loggedIn}}
+
+                <button id="logoutBtn">Logout</button>
+
+                {{else}}
+
+                 <li id="loginBtn"><a href="/login" title="Member Login / Sign-Up">Login / Sign-up</a></li>
+
+                 {{/if}}
+
             </ul>
         </nav>
     </header>
@@ -24,7 +33,7 @@
     <main>
         {{{body}}}
     </main>
-
+<script src="/scripts/logout.js"></script>
 </body>
 
 </html>
