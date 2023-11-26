@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-    console.info(`The request is: ${req.params}`);
+    console.info(`The request is: ${req.params.id}`);
     const { id } = req.params.id;
     console.log(`The id retrieved from the request is: ${id}`);
     const postId = await Post.findByPk(req.params.id, {
@@ -31,11 +31,12 @@ router.get('/:id', async (req, res) => {
        ],
     });
 
+    // findAll returns an array which is needed to allow the views for each to loop over it.  findOne returns an object.
     const commentsOnPost = await Comment.findAll({
         where: {
             post_id: req.params.id,
         }
-    })
+    });
 
     // console.log(postId);
 
