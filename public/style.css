@@ -86,10 +86,6 @@ div {
     margin-top: 100px;
 }
 
-#logoutBtn {
-    /* display: none; */
-}
-
 button:hover {
     cursor: pointer;
 }
