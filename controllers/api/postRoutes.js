@@ -7,8 +7,9 @@ router.get('/', async (req, res) => {
     // console.log(postData);
     console.log(req.session);
     const posts = postData.map(post => post.get({ plain: true }));
-    console.log(posts);
-    res.render('homepage', { 
+    // console.log(posts);
+    console.info(req.session.loggedIn);
+    res.render('posts', { 
         posts,
         loggedIn: req.session.loggedIn,
     });

@@ -77,12 +77,18 @@ div {
     opacity: .85;
 }
 
-/* .post {
-    background-color: grey;
-    border-radius: .5em;
-    padding: 15px;
-    opacity: .85;
-} */
+#loginHeader,
+#loginHeader a {
+    color: red;
+    text-decoration: underline;
+    text-align: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+button:hover {
+    cursor: pointer;
+}
 
 
 
