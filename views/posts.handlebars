@@ -5,6 +5,7 @@
 {{#each posts as |post|}}
 
 <section>
+    <a href="/api/posts/{{post.id}}">
     <div class="post">
         <h3>{{post.title}}</h3>
         <p>{{post.post_content}}</p>
@@ -13,6 +14,7 @@
             <button>Add Comment</button>
         </div>
     </div>
+    </a>
 </section>
 {{/each}}
 
