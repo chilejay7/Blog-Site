@@ -68,4 +68,12 @@ router.get('/add', (req, res) => {
     });
 })
 
+router.post('/add', (req, res) => {
+    console.log(req.body);
+    const newPost = req.body;
+
+    res.send('Thank you for your contribution.')
+
+})
+
 module.exports = router;
