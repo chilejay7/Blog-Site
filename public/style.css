@@ -90,5 +90,16 @@ button:hover {
     cursor: pointer;
 }
 
+.commentAuthor {
+    font-size: .85rem;
+}
+
+.post_dashboard,
+.home_posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-basis: 100%;
+}
 
 
