@@ -1,17 +1,26 @@
 {{#if loggedIn}}
 
 <section>
-    <div>
-        <label for="newPostBox">Add a post:</label>
-    </div>
+    <form action="/api/posts/add" method="POST">
+        <div>
+            <label for="newPostTitle">Post Title:</label>
+        </div>
+        <div>
+            <input type="text" placeholder="The title of your post goes here" name="post_title" id="newPostTitle">
+        </div>
 
-    <div>
-        <textarea id="newPostBox" placeholder="Enter your post here..."></textarea>
-    </div>
+        <div>
+            <label for="newPostBox">Add post content:</label>
+        </div>
 
-    <div>
-        <button id="createBtn">Create Post</button>
-    </div>
+        <div>
+            <textarea id="newPostBox" placeholder="Enter your post here..." name="post_content"></textarea>
+        </div>
+
+        <div>
+            <button id="createBtn">Create Post</button>
+        </div>
+    </form>
 </section>
 
 {{else}}

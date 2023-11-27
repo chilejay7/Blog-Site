@@ -2,12 +2,9 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
 
 router.get('/', async (req, res) => {
-    // console.log(req);
     const postData = await Post.findAll();
-    // console.log(postData);
     console.log(req.session);
     const posts = postData.map(post => post.get({ plain: true }));
-    // console.log(posts);
     console.info(req.session.loggedIn);
     res.render('posts', { 
         posts,
@@ -70,9 +67,17 @@ router.get('/add', (req, res) => {
 
 router.post('/add', (req, res) => {
     console.log(req.body);
-    const newPost = req.body;
+    // console.dir(`Session Information: ${req.session}`);
+    const { post_title, post_content } = req.body;
+    const { user_id } = req.session;
+    // console.log(`The user's id is: ${user_id}`);
+    const newPost = Post.create({
+        title: post_title,
+        post_content,
+        user_id,
+    });
 
-    res.send('Thank you for your contribution.')
+    res.redirect('/api/posts');
 
 })
 

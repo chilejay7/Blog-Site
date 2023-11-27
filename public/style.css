@@ -111,3 +111,7 @@ button:hover {
     height: 200px;
 }
 
+#newPostTitle {
+    width: 50%;
+}
+
