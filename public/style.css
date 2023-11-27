@@ -111,6 +111,11 @@ button:hover {
     height: 200px;
 }
 
+.commentBox {
+    width: 75%;
+    height: 75%;
+}
+
 #newPostTitle {
     width: 50%;
 }
