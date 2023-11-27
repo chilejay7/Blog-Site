@@ -14,6 +14,7 @@ router.get('/', async (req, res) => {
 
 // GET route to view a specific post and its related comments.  The route's url had to be updated to include 'byId'.
 // When the route was used with only /:id, no additional routes could be defined.  All values after the / were being interpreted as id's.
+// The id is inserted into the route's url within the posts.handlebars views file.
 router.get('/byId/:id', async (req, res) => {
     console.info(`The request is: ${req.params.id}`);
     const { id } = req.params;
@@ -51,7 +52,7 @@ router.get('/byId/:id', async (req, res) => {
     console.log(comments);
     console.log(`The post retrieved from the database query is: ${posts}`);
 
-    res.render('updatePost', {
+    res.render('postById', {
         posts,
         comments,
         loggedIn: req.session.loggedIn,

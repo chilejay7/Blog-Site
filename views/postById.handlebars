@@ -15,14 +15,14 @@
 
             <p>{{comment.comment_content}}</p>
             <p class="commentAuthor">Comment left on: {{format_date comment.comment_date}} by {{comment.user.user_name}}</p>
-            {{!-- <p>Comment left on: {{format_date comment.comment_date}}</p> --}}
+
             <hr>
 
             {{/each}}
 
-            <form action="#">
+            <form action="/api/comments/{{posts.id}}" method="POST">
                 <div>
-                    <textarea class="commentBox" placeholder="Enter your comment here..."></textarea>
+                    <textarea class="commentBox" placeholder="Enter your comment here..." name="comment_content"></textarea>
                 </div>
                 <div>
                     <button>Add Comment</button>
