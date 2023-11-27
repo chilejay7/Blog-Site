@@ -91,9 +91,14 @@ button:hover {
 }
 
 .commentAuthor {
-    /* float: right; */
     font-size: .85rem;
 }
 
+.post_dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-basis: 100%;
+}
 
 

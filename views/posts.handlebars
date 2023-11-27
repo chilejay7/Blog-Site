@@ -4,18 +4,22 @@
 
 <p>Click a post to view its comments and add one of your own!</p>
 
-{{#each posts as |post|}}
+<section class="post_dashboard">
 
-<section>
-    <a href="/api/posts/{{post.id}}">
+    {{#each posts as |post|}}
+
+
     <div class="post">
+        <a href="/api/posts/{{post.id}}"></a>
         <h3>{{post.title}}</h3>
         <p>{{post.post_content}}</p>
         <p>Created on: {{post.post_date}}</p>
+        </a>
     </div>
-    </a>
+
+    {{/each}}
+
 </section>
-{{/each}}
 
 {{else}}
 
