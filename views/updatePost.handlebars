@@ -5,7 +5,8 @@
 <section>
     <div class="post">
         <p>{{posts.post_content}}</p>
-        <p>Created by {{posts.user.user_name}} on {{posts.post_date}}</p>
+        <p>Created by {{posts.user.user_name}}</p>
+        <p>{{format_date posts.post_date}}</p>
         <div>
             <h3>Comments:</h3>
             {{#each comments as |comment|}}
