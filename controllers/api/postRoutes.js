@@ -31,23 +31,20 @@ router.get('/:id', async (req, res) => {
        ],
     });
 
-    // findAll returns an array which is needed to allow the views for each to loop over it.  findOne returns an object.
+    // findAll returns an array which is needed to allow the views for each statement to loop over it.  findOne returns an object which will throw errors.
     const commentsOnPost = await Comment.findAll({
         where: {
             post_id: id,
         }
     });
 
-    // console.log(postId);
-
-    // const postEdit = postId.map(post => post.get({ plain: true }));
-    const postEdit = postId.get({ plain: true });
+    const posts = postId.get({ plain: true });
     const comments = commentsOnPost.map(c => c.get({ plain: true }));
     console.log(comments);
-    console.log(`The post retrieved from the database query is: ${postEdit}`);
+    console.log(`The post retrieved from the database query is: ${posts}`);
 
     res.render('updatePost', {
-        postEdit,
+        posts,
         comments,
         loggedIn: req.session.loggedIn,
     })

@@ -1,11 +1,11 @@
 {{#if loggedIn}}
 
-<h2>Viewing Post: {{postEdit.title}}</h2>
+<h2>Viewing Post: {{posts.title}}</h2>
 
 <section>
     <div class="post">
-        <p>{{postEdit.post_content}}</p>
-        <p>Created by {{postEdit.user.user_name}} on {{postEdit.post_date}}</p>
+        <p>{{posts.post_content}}</p>
+        <p>Created by {{posts.user.user_name}} on {{posts.post_date}}</p>
         <div>
             <h3>Comments:</h3>
             {{#each comments as |comment|}}
