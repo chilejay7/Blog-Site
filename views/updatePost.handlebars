@@ -13,7 +13,8 @@
             {{#each comments as |comment|}}
 
             <p>{{comment.comment_content}}</p>
-            <p class="commentAuthor">~ {{comment.user.user_name}}</p>
+            <p class="commentAuthor">Comment left on: {{format_date comment.comment_date}} by {{comment.user.user_name}}</p>
+            {{!-- <p>Comment left on: {{format_date comment.comment_date}}</p> --}}
             <hr>
 
             {{/each}}

@@ -65,19 +65,19 @@ router.get('/add', (req, res) => {
     });
 })
 
-router.post('/add', (req, res) => {
+router.post('/add', async (req, res) => {
     console.log(req.body);
     // console.dir(`Session Information: ${req.session}`);
     const { post_title, post_content } = req.body;
     const { user_id } = req.session;
-    // console.log(`The user's id is: ${user_id}`);
-    const newPost = Post.create({
+    console.log(`The user's id is: ${user_id}`);
+    const newPost = await Post.create({
         title: post_title,
         post_content,
         user_id,
     });
 
-    res.redirect('/api/posts');
+    res.status(200).redirect('/api/posts');
 
 })
 
