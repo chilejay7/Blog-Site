@@ -106,3 +106,8 @@ button:hover {
     margin-left: 5%;
 }
 
+#newPostBox {
+    width: 50%;
+    height: 200px;
+}
+
