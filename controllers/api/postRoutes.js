@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Post, User, Comment } = require('../../models');
 
 router.get('/', async (req, res) => {
     // console.log(req);
@@ -14,5 +14,42 @@ router.get('/', async (req, res) => {
         loggedIn: req.session.loggedIn,
     });
 });
+
+router.get('/:id', async (req, res) => {
+    console.info(`The request is: ${req.params}`);
+    const { id } = req.params.id;
+    console.log(`The id retrieved from the request is: ${id}`);
+    const postId = await Post.findByPk(req.params.id, {
+       include: [
+        {
+            model: User,
+            attributes: [
+                'id',
+                'user_name',
+            ],
+        },
+       ],
+    });
+
+    const commentsOnPost = await Comment.findAll({
+        where: {
+            post_id: req.params.id,
+        }
+    })
+
+    // console.log(postId);
+
+    // const postEdit = postId.map(post => post.get({ plain: true }));
+    const postEdit = postId.get({ plain: true });
+    const comments = commentsOnPost.map(c => c.get({ plain: true }));
+    console.log(comments);
+    console.log(`The post retrieved from the database query is: ${postEdit}`);
+
+    res.render('updatePost', {
+        postEdit,
+        comments,
+        loggedIn: req.session.loggedIn,
+    })
+})
 
 module.exports = router;

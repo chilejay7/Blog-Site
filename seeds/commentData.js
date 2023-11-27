@@ -15,6 +15,12 @@ const commentData = [
         post_id: 2,
     },
     {
+        comment_date: 'November 23, 2023 12:30:00',
+        comment_content: 'I like this post.',
+        user_id: 1,
+        post_id: 2,
+    },
+    {
         comment_date: 'November 21, 2023 20:30:00',
         comment_content: 'Thanks for posting this.  I really enjoyed reading it.',
         user_id: 1,
