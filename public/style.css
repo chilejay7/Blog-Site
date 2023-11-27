@@ -94,7 +94,8 @@ button:hover {
     font-size: .85rem;
 }
 
-.post_dashboard {
+.post_dashboard,
+.home_posts {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;

@@ -1,12 +1,15 @@
 <h2>Byte-Sized Posts</h2>
 
+<section class="home_posts">
 {{#each posts as |post|}}
 
-<section>
+
     <div class="post">
         <h3>{{post.title}}</h3>
         <p>{{post.post_content}}</p>
         <p>Created on: {{post.post_date}}</p>
     </div>
-</section>
+
 {{/each}}
+
+</section>
