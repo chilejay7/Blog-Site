@@ -77,8 +77,8 @@ div {
     opacity: .85;
 }
 
-#loginHeader,
-#loginHeader a {
+.loginHeader,
+.loginHeader a {
     color: red;
     text-decoration: underline;
     text-align: center;

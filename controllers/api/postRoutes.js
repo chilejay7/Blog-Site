@@ -15,7 +15,9 @@ router.get('/', async (req, res) => {
     });
 });
 
-router.get('/:id', async (req, res) => {
+// GET route to view a specific post and its related comments.  The route's url had to be updated to include 'byId'.
+// When the route was used with only /:id, no additional routes could be defined.  All values after the / were being interpreted as id's.
+router.get('/byId/:id', async (req, res) => {
     console.info(`The request is: ${req.params.id}`);
     const { id } = req.params;
     console.log(`The id retrieved from the request is: ${id}`);
@@ -57,6 +59,13 @@ router.get('/:id', async (req, res) => {
         comments,
         loggedIn: req.session.loggedIn,
     })
+});
+
+// GET route to provdie the template to add a post to the site.
+router.get('/add', (req, res) => {
+    res.render('post_add', {
+        loggedIn: req.session.loggedIn,
+    });
 })
 
 module.exports = router;

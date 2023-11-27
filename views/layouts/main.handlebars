@@ -15,16 +15,17 @@
             <ul>
                 <li><a href="/" title="Return to the homepage">Home</a></li>
                 <li><a href="/api/posts" title="Dashboard">Dashboard</a></li>
-               
+
                 {{#if loggedIn}}
 
+                <button id="addBtn">Add a Post</button>
                 <button id="logoutBtn">Logout</button>
 
                 {{else}}
 
-                 <li id="loginBtn"><a href="/login" title="Member Login / Sign-Up">Login</a></li>
+                <li id="loginBtn"><a href="/login" title="Member Login / Sign-Up">Login</a></li>
 
-                 {{/if}}
+                {{/if}}
 
             </ul>
         </nav>
@@ -33,7 +34,9 @@
     <main>
         {{{body}}}
     </main>
-<script src="/scripts/logout.js"></script>
+
+    <script src="/scripts/add.js"></script>
+    <script src="/scripts/logout.js"></script>
 </body>
 
 </html>
