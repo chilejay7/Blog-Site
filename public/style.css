@@ -90,5 +90,10 @@ button:hover {
     cursor: pointer;
 }
 
+.commentAuthor {
+    /* float: right; */
+    font-size: .85rem;
+}
+
 
 

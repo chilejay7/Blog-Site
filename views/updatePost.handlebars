@@ -11,6 +11,7 @@
             {{#each comments as |comment|}}
 
             <p>{{comment.comment_content}}</p>
+            <p class="commentAuthor">~ {{comment.user.user_name}}</p>
 
             {{/each}}
             <button>Add Comment</button>
