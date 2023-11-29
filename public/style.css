@@ -1,3 +1,6 @@
+* {
+    font-family: 'Playfair Display', serif;
+}
 
 header {
     display: flex;
@@ -5,7 +8,7 @@ header {
     align-items: center;
     background-color: yellow;
     color: black;
-    border-radius: .1em;
+    border-radius: .3em;
 }
 
 h1 {
@@ -38,10 +41,10 @@ a {
 
 li {
     transition: 0.3s;
-}
 
-li:hover {
-    transform: translate(0, -2px);
+    &:hover {
+        transform: translate(0, -2px);
+    }
 }
 
 h2 {
@@ -58,7 +61,11 @@ body {
 }
 
 div {
-    margin: 10px 0px;
+    margin: 15px;
+}
+
+main {
+    margin-left: 5%;
 }
 
 #accountForms {
@@ -73,8 +80,14 @@ div {
     font-size: 1.25rem;
     padding: 15px;
     border-radius: .5em;
-    width: 25%;
+    width: 450px;
     opacity: .85;
+
+    transition: 0.3s;
+
+    &:hover {
+        transform: translate(0, -5px);
+    }
 }
 
 .loginHeader,
@@ -86,8 +99,16 @@ div {
     margin-top: 100px;
 }
 
-button:hover {
-    cursor: pointer;
+button {
+    font-weight: bold;
+    padding: 5px;
+    border-radius: .5em;
+    transition: .3s;
+
+    &:hover {
+        cursor: pointer;
+        transform: translate(0, -2px);
+    }
 }
 
 .commentAuthor {
@@ -99,7 +120,6 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    flex-basis: 100%;
 }
 
 .comments_section {
@@ -118,10 +138,6 @@ button:hover {
 
 #newPostTitle {
     width: 50%;
-}
-
-div {
-    margin: 10px;
 }
 
 .updateForm {
