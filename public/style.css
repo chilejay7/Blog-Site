@@ -77,8 +77,8 @@ div {
     opacity: .85;
 }
 
-#loginHeader,
-#loginHeader a {
+.loginHeader,
+.loginHeader a {
     color: red;
     text-decoration: underline;
     text-align: center;
@@ -102,4 +102,21 @@ button:hover {
     flex-basis: 100%;
 }
 
+.comments_section {
+    margin-left: 5%;
+}
+
+#newPostBox {
+    width: 50%;
+    height: 200px;
+}
+
+.commentBox {
+    width: 75%;
+    height: 75%;
+}
+
+#newPostTitle {
+    width: 50%;
+}
 

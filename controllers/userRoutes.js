@@ -26,9 +26,7 @@ router.post('/', async (req, res) => {
 
     // If the login password doesn't match the associated record in the database, a 400 status code is returned and stays on the login page.
     if (!validPassword) {
-        res
-            .status(400)
-            .render('user');
+        res.status(400).render('user');
         return;
     }
 

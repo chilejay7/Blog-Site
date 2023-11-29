@@ -1,0 +1,41 @@
+{{#if loggedIn}}
+
+<h2>Viewing: {{posts.title}}</h2>
+
+<section>
+    <div class="post">
+        <p>{{posts.post_content}}</p>
+        <p>Created by {{posts.user.user_name}}</p>
+        <p>{{format_date posts.post_date}}</p>
+        
+        <div class="comments_section">
+            <h3>Comments:</h3>
+             
+            {{#each comments as |comment|}}
+
+            <p>{{comment.comment_content}}</p>
+            <p class="commentAuthor">Comment left on: {{format_date comment.comment_date}} by {{comment.user.user_name}}</p>
+
+            <hr>
+
+            {{/each}}
+
+            <form action="/api/comments/{{posts.id}}" method="POST">
+                <div>
+                    <textarea class="commentBox" placeholder="Enter your comment here..." name="comment_content"></textarea>
+                </div>
+                <div>
+                    <button>Add Comment</button>
+                </div>
+                
+            </form>
+           
+        </div>
+    </div>
+</section>
+
+{{else}}
+
+<h3 class="loginHeader"><a href="/login">Please login to view and interact with other user's posts and comments</a></h3>
+
+{{/if}}
