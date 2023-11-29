@@ -7,6 +7,9 @@
         <p>{{posts.post_content}}</p>
         <p>Created by {{posts.user.user_name}}</p>
         <p>{{format_date posts.post_date}}</p>
+
+        <button id="displayUpdateBtn">Update Post</button>
+        <button id="deletePostBtn">Delete Post</button>
         
         <div class="comments_section">
             <h3>Comments:</h3>
@@ -32,6 +35,30 @@
            
         </div>
     </div>
+</section>
+
+{{!-- This form is hidden until the Update button on the post is clicked.  An event listener in the post_update.js file changes the display property. --}}
+<section>
+    <form class="updateForm">
+        <div>
+            <label for="title_update">Updated Post Title:</label>
+        </div>
+        <div>
+            <input type="text" placeholder="Updated Title" name="post_title" id="title_update">
+        </div>
+
+        <div>
+            <label for="content_update">Updated Post Content:</label>
+        </div>
+
+        <div>
+            <textarea class="commentBox" id="content_update" placeholder="Enter your udpated post here..." name="post_content">{{posts.post_content}}</textarea>
+        </div>
+
+        <div>
+            <button id="updateBtn">Update Post</button>
+        </div>
+    </form>
 </section>
 
 {{else}}
