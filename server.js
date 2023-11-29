@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('dev'));
 
 const userSessions = {
-    secret: process.env.SECRET,
+    secret: 'keep it secret keep it safe',
     cookie: {
         maxAge: 24 * 60 * 60 * 1000,
     },
