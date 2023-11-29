@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET route to view a specific post and its related comments.  The route's url had to be updated to include 'byId'.
-// When the route was used with only /:id, no additional routes could be defined.  All values after the / were being interpreted as id's.
+// When the route was used with only /:id, no additional GET routes could be defined.  All values after the / were being interpreted as id's.
 // The id is inserted into the route's url within the posts.handlebars views file.
 router.get('/byId/:id', async (req, res) => {
     console.info(`The request is: ${req.params.id}`);
@@ -88,6 +88,9 @@ router.post('/add', async (req, res) => {
 
 });
 
+// The request for this route is made from within the post_update.js file.
+// An event listener on the update button triggers the request.
+// A render or redirect is not needed in the response.  This is done from within the post_update.js file that makes the initial request.
 router.put('/:id', async (req, res) => {
 
     const { id } = req.params;
@@ -109,12 +112,15 @@ router.put('/:id', async (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
+    console.log(req);
     const { id } = req.params; 
-    Post.destroy({
+    const deletePost = await Post.destroy({
         where: {
             id,
         }
-    })
+    });
+
+    res.status(200).json('The post has been removed.')
 })
 
 module.exports = router;

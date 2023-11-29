@@ -18,7 +18,7 @@
 
                 {{#if loggedIn}}
 
-                <button id="addBtn">Add a Post</button>
+                <button id="addBtn"><a href="/api/posts/add">Add a Post</a></button>
                 <button id="logoutBtn">Logout</button>
 
                 {{else}}
@@ -36,6 +36,7 @@
     </main>
 
     <script src="/scripts/post_update.js"></script>
+    <script src="/scripts/post_delete.js"></script>
     <script src="/scripts/add.js"></script>
     <script src="/scripts/logout.js"></script>
 </body>
