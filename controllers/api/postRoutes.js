@@ -88,18 +88,25 @@ router.post('/add', async (req, res) => {
 
 });
 
-// router.put('/:id', async (req, res) => {
-//     const updatedPost = await Post.update({
-//         title: ,
-//         post_content: ,
-//     },
-//     {
-//         where: {
-//             id,
-//         },
-//     },
-//     )
-// });
+router.put('/:id', async (req, res) => {
+
+    const { id } = req.params;
+    const{ post_title, post_content } = req.body;
+    console.log(`This is the id:${id}`);
+
+    const updatedPost = await Post.update({
+        title: post_title,
+        post_content,
+    },
+    {
+        where: {
+            id,
+        },
+    },
+    )
+
+    res.status(200).json(updatedPost);
+});
 
 router.delete('/:id', async (req, res) => {
     const { id } = req.params; 

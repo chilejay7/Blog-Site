@@ -10,6 +10,7 @@ const unhideForm = (e) => {
 
 const updatePost = async (e) => {
 
+    console.log(e);
     // This is used to prevent the page from refreshing.
     e.preventDefault();
 
@@ -35,10 +36,10 @@ const updatePost = async (e) => {
         })
     });
 
-    sendUpdate.ok ? document.location.replace(`/api/posts/${id}`)
+    sendUpdate.ok ? document.location.replace(`/api/posts/byId/${id}`)
         : console.log('Update failed');
 };
 
 displayUpdateBtn.addEventListener('click', unhideForm);
 
-updateBtn.addEventListener('submit', updatePost);
+updateForm.addEventListener('submit', updatePost);
