@@ -48,6 +48,8 @@ router.get('/byId/:id', async (req, res) => {
     });
 
     const posts = postId.get({ plain: true });
+
+    // This is used to serialize the data so that it only includes the data that we need
     const comments = commentsOnPost.map(c => c.get({ plain: true }));
     console.log(comments);
     console.log(`The post retrieved from the database query is: ${posts}`);
@@ -59,13 +61,17 @@ router.get('/byId/:id', async (req, res) => {
     })
 });
 
-// GET route to provdie the template to add a post to the site.
+// GET route to provide the template to add a post to the site.
+// This route is called through the "Add a Post" button in the nav bar when logged in.
 router.get('/add', (req, res) => {
     res.render('post_add', {
         loggedIn: req.session.loggedIn,
     });
 })
 
+// This route is called from the form embedded within the post_add.handlebars view.
+// On submit the action attribute creates a POST request to the route.
+// The fields needed for the database are submitted using the form fields' name attributes.
 router.post('/add', async (req, res) => {
     console.log(req.body);
     // console.dir(`Session Information: ${req.session}`);
@@ -80,6 +86,28 @@ router.post('/add', async (req, res) => {
 
     res.status(200).redirect('/api/posts');
 
+});
+
+// router.put('/:id', async (req, res) => {
+//     const updatedPost = await Post.update({
+//         title: ,
+//         post_content: ,
+//     },
+//     {
+//         where: {
+//             id,
+//         },
+//     },
+//     )
+// });
+
+router.delete('/:id', async (req, res) => {
+    const { id } = req.params; 
+    Post.destroy({
+        where: {
+            id,
+        }
+    })
 })
 
 module.exports = router;

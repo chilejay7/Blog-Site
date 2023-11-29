@@ -98,7 +98,7 @@ button:hover {
 .home_posts {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     flex-basis: 100%;
 }
 
@@ -118,5 +118,13 @@ button:hover {
 
 #newPostTitle {
     width: 50%;
+}
+
+div {
+    margin: 10px;
+}
+
+.updateForm {
+    display: none;
 }
 

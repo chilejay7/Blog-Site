@@ -6,16 +6,6 @@ const displayAdd = () => {
     document.location.replace('/api/posts/add');
 };
 
-// const addPost = async () => {
-//     const sendPost = await fetch ('/api/posts/add', {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//     });
-
-//    sendPost.ok ? document.location.replace('/')
-//     : alert('Unable to create post.  Please try again later.');
-// }
-
 addBtn.addEventListener('click', displayAdd);
 
 // createBtn.addEventListener('click', addPost);
