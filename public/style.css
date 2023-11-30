@@ -1,29 +1,39 @@
+:root {
+    --bkgrd1: #ffea00;
+    --bkgrd2: #ffdd00;
+
+    --gradient: linear-gradient(90deg, #ffd000, #ffdd00, #ffea00, #ffdd00, #ffd000);
+}
+
 * {
     font-family: 'Playfair Display', serif;
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: yellow;
+    /* background-color: #ffea00; */
     color: black;
     border-radius: .3em;
+    background: var(--gradient);
+    opacity: .85;
 }
 
 footer {
-    background-color: yellow;
+    background: var(--gradient);
     color: black;
     border-radius: .3em;
     padding: 5px;
     margin-top: 20px;
     text-align: center;
+    opacity: .85;
 }
 
 h1 {
     text-align: center;
     font-size: 3rem;
-    margin-left: 2%;
+    margin-left: 5%;
     flex-basis: 85%;
 }
 
