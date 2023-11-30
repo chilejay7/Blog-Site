@@ -3,7 +3,7 @@
 
 ## Description
 
-The Technology Bytes blog application uses the Model View Controller (MVC) model to create and maintain a blog site.  The `express-handlebars` module is used to integrate front end code with data retrieved from the back-end database through the controllers.  End users can create, view, update and delete posts.  Comments can also be added to existing posts. The site offers authentication and stores session information to provide views based on the user's login state.
+The Technology Bytes blog application uses the Model View Controller (MVC) paradigm to create and maintain a blog site.  The `express-handlebars` module is used to integrate front end code with data retrieved from the back-end database through the controllers.  End users can create, view, update and delete posts.  Comments can also be added to existing posts. The site offers authentication and stores session information to provide views based on the user's login state.
 
 ![Technology Bytes Blog App](./public/assets/blog_screen.png)
 
