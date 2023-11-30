@@ -53,7 +53,15 @@ router.post('/create', async (req, res) => {
         password: req.body.password,
     });
 
+    const newUser = await User.findOne({
+        where: {
+            user_name: req.body.user_name,
+        }
+    });
+
+
     req.session.save(() => {
+        req.session.user_id = newUser.id;
         req.session.loggedIn = true;
         res.status(200).redirect('/');
     })
