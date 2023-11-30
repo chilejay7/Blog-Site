@@ -85,9 +85,9 @@ main {
 
     transition: 0.3s;
 
-    &:hover {
+    /* &:hover {
         transform: translate(0, -5px);
-    }
+    } */
 }
 
 .loginHeader,
