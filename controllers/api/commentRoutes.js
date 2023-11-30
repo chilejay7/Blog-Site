@@ -1,13 +1,6 @@
 const router = require('express').Router();
 const { Comment, Post, User } = require('../../models');
 
-// router.get('/', (req, res) => {
-//     console.log(req);
-//     const commentData = Comment.findAll();
-//     res.send('Comment request received.');
-// });
-
-
 // This route receives POST requests from the comments box built-into the postById view.
 router.post('/:id', async (req, res) => {
     const { user_id } = req.session;
