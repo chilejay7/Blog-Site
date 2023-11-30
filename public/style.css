@@ -2,13 +2,22 @@
     font-family: 'Playfair Display', serif;
 }
 
-header {
+header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: yellow;
     color: black;
     border-radius: .3em;
+}
+
+footer {
+    background-color: yellow;
+    color: black;
+    border-radius: .3em;
+    padding: 5px;
+    margin-top: 20px;
+    text-align: center;
 }
 
 h1 {
