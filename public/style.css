@@ -111,7 +111,8 @@ button {
     }
 }
 
-.commentAuthor {
+.commentAuthor,
+.post_author {
     font-size: .85rem;
 }
 

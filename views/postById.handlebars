@@ -5,8 +5,7 @@
 <section>
     <div class="post">
         <p>{{posts.post_content}}</p>
-        <p>Created by {{posts.user.user_name}}</p>
-        <p>{{format_date posts.post_date}}</p>
+        <p class="post_author">Created by {{posts.user.user_name}} on {{format_date posts.post_date}}</p>
 
         <button id="displayUpdateBtn">Update Post</button>
         <button id="deletePostBtn">Delete Post</button>
